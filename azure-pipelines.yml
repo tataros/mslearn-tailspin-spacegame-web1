@@ -61,4 +61,14 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
-  condition: succeeded()    
+  condition: succeeded()   
+
+# Publish a Universal Package
+- task: UniversalPackages@0
+  displayName: Universal Publish
+  inputs:
+    command: publish
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    vstsFeedPublish: '<projectName>/<feedName>'
+    vstsFeedPackagePublish: '<Package name>'
+    packagePublishDescription: '<Package description>'
