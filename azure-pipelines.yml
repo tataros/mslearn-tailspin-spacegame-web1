@@ -63,12 +63,10 @@ steps:
   displayName: 'Publish Artifact: drop'
   condition: succeeded()   
 
-# Publish a Universal Package
 - task: UniversalPackages@0
-  displayName: Universal Publish
   inputs:
-    command: publish
+    command: 'publish'
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    vstsFeedPublish: '<projectName>/<feedName>'
-    vstsFeedPackagePublish: '<Package name>'
-    packagePublishDescription: '<Package description>'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '0f871ee1-d283-490f-a730-b98cf056ce6c/399bef51-5f75-4936-b36f-e60c0bcbaf3d'
+    versionOption: 'patch'
