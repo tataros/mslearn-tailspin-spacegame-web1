@@ -62,14 +62,5 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()   
-- task: UniversalPackages@0
-  displayName: Universal Publish
-  inputs:
-    command: 'publish'
-    publishDirectory: '$(Build.ArtifactStagingDirectory)'
-    feedsToUsePublish: 'internal'
-    vstsFeedPublish: 'f308ee4b-1384-4e68-b04c-379b9a5d4588'
-    vstsFeedPackagePublish: 'tatar'
-    versionOption: 'patch'
-    packagePublishDescription: '<Package description>'
+
 
